@@ -11,6 +11,17 @@
 		429845C22BF5293100BF95DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845C12BF5293100BF95DB /* ContentView.swift */; };
 		429845C42BF5293400BF95DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 429845C32BF5293400BF95DB /* Assets.xcassets */; };
 		429845C72BF5293400BF95DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 429845C62BF5293400BF95DB /* Preview Assets.xcassets */; };
+		429845D52BF538F300BF95DB /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845D42BF538F300BF95DB /* Pokemon.swift */; };
+		429845D72BF5401600BF95DB /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845D62BF5401600BF95DB /* PokemonList.swift */; };
+		429845DF2BF5472800BF95DB /* ConstApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845DE2BF5472800BF95DB /* ConstApp.swift */; };
+		429845E32BF5479B00BF95DB /* HTTPSEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845E22BF5479B00BF95DB /* HTTPSEndpoints.swift */; };
+		429845E52BF5484D00BF95DB /* HTTPResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845E42BF5484D00BF95DB /* HTTPResponseCodes.swift */; };
+		429845E72BF5486B00BF95DB /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845E62BF5486B00BF95DB /* HTTPMethods.swift */; };
+		429845E92BF5488800BF95DB /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845E82BF5488800BF95DB /* HTTPHeader.swift */; };
+		429845EB2BF548AA00BF95DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845EA2BF548AA00BF95DB /* NetworkError.swift */; };
+		429845EF2BF548E000BF95DB /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845EE2BF548E000BF95DB /* NetworkRequest.swift */; };
+		429845F12BF54D5F00BF95DB /* NetworkPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */; };
+		429845F42BF5CDBE00BF95DB /* URLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,17 @@
 		429845C12BF5293100BF95DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		429845C32BF5293400BF95DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		429845C62BF5293400BF95DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		429845D42BF538F300BF95DB /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		429845D62BF5401600BF95DB /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
+		429845DE2BF5472800BF95DB /* ConstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstApp.swift; sourceTree = "<group>"; };
+		429845E22BF5479B00BF95DB /* HTTPSEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSEndpoints.swift; sourceTree = "<group>"; };
+		429845E42BF5484D00BF95DB /* HTTPResponseCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseCodes.swift; sourceTree = "<group>"; };
+		429845E62BF5486B00BF95DB /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		429845E82BF5488800BF95DB /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		429845EA2BF548AA00BF95DB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		429845EE2BF548E000BF95DB /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPokemon.swift; sourceTree = "<group>"; };
+		429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				429845D02BF52A0700BF95DB /* Presentation */,
-				429845CF2BF529FD00BF95DB /* Data */,
 				429845CE2BF529F700BF95DB /* Domain */,
+				429845CF2BF529FD00BF95DB /* Data */,
 				429845CD2BF529EB00BF95DB /* App */,
 			);
 			path = Practica_DesarrolloSeguro_J.Bueno;
@@ -79,6 +101,10 @@
 		429845CE2BF529F700BF95DB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				429845F22BF5CD9C00BF95DB /* Extensions */,
+				429845DD2BF5471400BF95DB /* Tools */,
+				429845D32BF538DD00BF95DB /* Models */,
+				429845DA2BF545B100BF95DB /* Protocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -86,6 +112,7 @@
 		429845CF2BF529FD00BF95DB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				429845DB2BF5463700BF95DB /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -97,6 +124,60 @@
 				429845C12BF5293100BF95DB /* ContentView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		429845D32BF538DD00BF95DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				429845D42BF538F300BF95DB /* Pokemon.swift */,
+				429845D62BF5401600BF95DB /* PokemonList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		429845DA2BF545B100BF95DB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		429845DB2BF5463700BF95DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				429845DC2BF5468E00BF95DB /* BaseNetwork */,
+				429845EE2BF548E000BF95DB /* NetworkRequest.swift */,
+				429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		429845DC2BF5468E00BF95DB /* BaseNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				429845E22BF5479B00BF95DB /* HTTPSEndpoints.swift */,
+				429845E42BF5484D00BF95DB /* HTTPResponseCodes.swift */,
+				429845E62BF5486B00BF95DB /* HTTPMethods.swift */,
+				429845E82BF5488800BF95DB /* HTTPHeader.swift */,
+				429845EA2BF548AA00BF95DB /* NetworkError.swift */,
+			);
+			path = BaseNetwork;
+			sourceTree = "<group>";
+		};
+		429845DD2BF5471400BF95DB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				429845DE2BF5472800BF95DB /* ConstApp.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		429845F22BF5CD9C00BF95DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +250,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				429845E92BF5488800BF95DB /* HTTPHeader.swift in Sources */,
+				429845E72BF5486B00BF95DB /* HTTPMethods.swift in Sources */,
+				429845E52BF5484D00BF95DB /* HTTPResponseCodes.swift in Sources */,
+				429845DF2BF5472800BF95DB /* ConstApp.swift in Sources */,
 				429845C22BF5293100BF95DB /* ContentView.swift in Sources */,
+				429845D72BF5401600BF95DB /* PokemonList.swift in Sources */,
+				429845F12BF54D5F00BF95DB /* NetworkPokemon.swift in Sources */,
 				429845C02BF5293100BF95DB /* Practica_DesarrolloSeguro_J_BuenoApp.swift in Sources */,
+				429845E32BF5479B00BF95DB /* HTTPSEndpoints.swift in Sources */,
+				429845F42BF5CDBE00BF95DB /* URLResponse+Extension.swift in Sources */,
+				429845D52BF538F300BF95DB /* Pokemon.swift in Sources */,
+				429845EF2BF548E000BF95DB /* NetworkRequest.swift in Sources */,
+				429845EB2BF548AA00BF95DB /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
