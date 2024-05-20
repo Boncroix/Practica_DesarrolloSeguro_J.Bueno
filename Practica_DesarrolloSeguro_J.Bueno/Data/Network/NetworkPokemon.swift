@@ -8,12 +8,13 @@
 import Foundation
 
 // MARK: - NetworkPokemonList
-final class NetworkPokemon {
-    
+final class NetworkPokemon: NetworkPokemonProtocol {
+
     // MARK: GetPokemon
-    func getPokemon(offset: Int, limit: Int) async throws -> [Pokemon] {
+    func getPokemon(offset: Int, limit: Int) async throws -> (Int, [Pokemon]) {
         
         var pokemons: [Pokemon] = []
+        var numberOfPokemons: Int = 0
         
         let request = try await NetworkRequest().requestForListPokemon(offset: offset, limit: limit)
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -27,14 +28,16 @@ final class NetworkPokemon {
             throw NetworkError.dataDecodingFailed
         }
 
+        numberOfPokemons = modelResponse.count
+        
         for pokemon in modelResponse.results {
             pokemons.append(try await getDetailPokemon(url: pokemon.url))
-    
         }
         
-        return pokemons
+        return (numberOfPokemons, pokemons)
     }
 
+    // MARK: GetDetailPokemon
     private func getDetailPokemon(url: String) async throws -> Pokemon {
         
         let request = try await NetworkRequest().requestForPokemon(url: url)

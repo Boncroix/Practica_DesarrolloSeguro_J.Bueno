@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: Model Pokemon List
+// MARK: - Model Pokemon List
 struct PokemonEntry: Codable {
     var count: Int
     var results: [PokemonList]

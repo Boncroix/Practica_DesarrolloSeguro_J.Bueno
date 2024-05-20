@@ -8,12 +8,14 @@
 import Foundation
 
 // MARK: - NetworkRequest
-struct NetworkRequest {
+struct NetworkRequest: NetworkRequestProtocol {
     
-    // MARK: Request for listPokemon
+    // MARK: RequestForLIstPokemon
     func requestForListPokemon(offset: Int, limit: Int) async throws -> URLRequest {
+        let endPoint = HTTPEndPoints.listPokemon(offset: offset, limit: limit)
+        let endPointString = endPoint.endPointString
         
-        guard let url = URL(string: "\(ConstApp.CONST_API_URL)\(HTTPEndPoints.listPokemon(offset: offset, limit: limit))") else {
+        guard let url = URL(string: "\(ConstApp.CONST_API_URL)\(endPointString)") else {
             throw NetworkError.malformedURL
         }
         
@@ -24,6 +26,7 @@ struct NetworkRequest {
         return request
     }
     
+    // MARK: RequestForPokemon
     func requestForPokemon(url: String) async throws -> URLRequest {
         
         guard let url = URL(string: url) else {

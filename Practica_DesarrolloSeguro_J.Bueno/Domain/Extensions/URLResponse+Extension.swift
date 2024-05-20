@@ -8,6 +8,8 @@
 import Foundation
 
 extension URLResponse {
+    
+    // MARK: Functions
     func getStatusCode() -> Int {
         if let httpResponse = self as? HTTPURLResponse{
             return httpResponse.statusCode

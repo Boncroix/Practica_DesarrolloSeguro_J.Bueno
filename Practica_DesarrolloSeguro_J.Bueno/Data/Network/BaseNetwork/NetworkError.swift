@@ -17,7 +17,7 @@ enum NetworkError: Error {
     case dataDecodingFailed
 }
 
-//Return String NetworkError
+// Return String NetworkError
 func errorMessage(for error: Error) -> String {
     guard let networkError = error as? NetworkError else {
         return "UNKNOWN ERROR"

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - ConstantApp
 struct ConstApp {
     static let CONST_API_URL = "https://pokeapi.co/api/v2/"
 }
