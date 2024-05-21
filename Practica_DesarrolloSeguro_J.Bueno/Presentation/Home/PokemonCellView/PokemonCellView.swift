@@ -26,7 +26,7 @@ struct PokemonCellView: View {
                 AsyncImage(url: url,
                            content: { image in
                                image.resizable()
-                                    .frame(width: 130, height: 90)
+                                    .frame(width: 150, height: 100)
                                     .aspectRatio(contentMode: .fill)
                                     .clipped()
                            },
@@ -37,14 +37,15 @@ struct PokemonCellView: View {
                 Image(systemName: "photo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 130, height: 90)
+                    .frame(width: 150, height: 100)
                     .foregroundColor(.gray)
             }
             
             VStack (alignment: .leading, content: {
                 Text(pokemon.name ?? "Unknown")
                     .fontWeight(.semibold)
-                    .font(.system(size: 14))
+                    .font(.system(size: 20))
+                    .padding()
             })
         }
     }

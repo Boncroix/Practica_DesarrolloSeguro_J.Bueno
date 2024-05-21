@@ -19,7 +19,7 @@ final class RepositoryPokemon: RepositoryNetworkPokemonProtocol {
     }
     
     // MARK: Functions
-    func getPokemon(offset: Int = 0, limit: Int = 20) async throws -> (Int, [Pokemon]) {
-        return try await networkPokemon.getPokemon(offset: offset, limit: limit)
+    func getPokemon() async throws -> [Pokemon] {
+        return try await networkPokemon.getPokemon()
     }
 }

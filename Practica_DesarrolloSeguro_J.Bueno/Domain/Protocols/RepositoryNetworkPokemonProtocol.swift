@@ -14,5 +14,5 @@ protocol RepositoryNetworkPokemonProtocol {
     var networkPokemon: NetworkPokemonProtocol { get }
     
     // MARK: Functions
-    func getPokemon(offset: Int, limit: Int) async throws -> (Int, [Pokemon])
+    func getPokemon() async throws -> [Pokemon]
 }

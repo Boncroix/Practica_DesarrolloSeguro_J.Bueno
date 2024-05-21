@@ -9,11 +9,13 @@ import Foundation
 
 // MARK: - Model Pokemon List
 struct PokemonEntry: Codable {
-    var count: Int
+    var count: Int?
+    var next: String?
+    var previous: String?
     var results: [PokemonList]
 }
 
 struct PokemonList: Codable {
-    var name: String
-    var url: String
+    var name: String?
+    var url: String?
 }

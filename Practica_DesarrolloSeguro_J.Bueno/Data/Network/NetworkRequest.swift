@@ -11,11 +11,9 @@ import Foundation
 struct NetworkRequest: NetworkRequestProtocol {
     
     // MARK: RequestForLIstPokemon
-    func requestForListPokemon(offset: Int, limit: Int) async throws -> URLRequest {
-        let endPoint = HTTPEndPoints.listPokemon(offset: offset, limit: limit)
-        let endPointString = endPoint.endPointString
-        
-        guard let url = URL(string: "\(ConstApp.CONST_API_URL)\(endPointString)") else {
+    func requestForListPokemon() async throws -> URLRequest {
+
+        guard let url = URL(string: "\(ConstApp.CONST_API_URL)\(HTTPEndPoints.listPokemon.rawValue)") else {
             throw NetworkError.malformedURL
         }
         

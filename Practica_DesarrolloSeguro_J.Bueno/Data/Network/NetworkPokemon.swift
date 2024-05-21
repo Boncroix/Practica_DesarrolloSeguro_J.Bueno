@@ -11,12 +11,11 @@ import Foundation
 final class NetworkPokemon: NetworkPokemonProtocol {
 
     // MARK: GetPokemon
-    func getPokemon(offset: Int, limit: Int) async throws -> (Int, [Pokemon]) {
+    func getPokemon() async throws -> [Pokemon] {
         
         var pokemons: [Pokemon] = []
-        var numberOfPokemons: Int = 0
         
-        let request = try await NetworkRequest().requestForListPokemon(offset: offset, limit: limit)
+        let request = try await NetworkRequest().requestForListPokemon()
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -27,14 +26,12 @@ final class NetworkPokemon: NetworkPokemonProtocol {
         guard let modelResponse = try? JSONDecoder().decode(PokemonEntry.self, from: data) else {
             throw NetworkError.dataDecodingFailed
         }
-
-        numberOfPokemons = modelResponse.count
         
         for pokemon in modelResponse.results {
-            pokemons.append(try await getDetailPokemon(url: pokemon.url))
+            pokemons.append(try await getDetailPokemon(url: pokemon.url ?? ""))
         }
         
-        return (numberOfPokemons, pokemons)
+        return pokemons
     }
 
     // MARK: GetDetailPokemon

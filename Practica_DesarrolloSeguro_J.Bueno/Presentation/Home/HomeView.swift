@@ -19,14 +19,27 @@ struct HomeView: View {
     
     // MARK: - View
     var body: some View {
-        NavigationView {
-            List(homeViewModel.pokemons) { pokemon in
-                PokemonCellView(pokemon: pokemon)
+        
+        ZStack {
+            Image("fondo1")
+                .resizable()
+                .ignoresSafeArea()
+            
+            Color.black.opacity(0.6)
+                .ignoresSafeArea()
+            
+            NavigationView {
+                List(homeViewModel.pokemons) { pokemon in
+                    PokemonCellView(pokemon: pokemon)
+                        .listRowBackground(Color.clear)
+                }
+                .navigationTitle("Pokemons")
+                .navigationBarTitleDisplayMode(.inline)
+                .scrollContentBackground(.hidden)
             }
-            .navigationTitle("Pokemons")
-            .scrollContentBackground(.hidden)
-            .navigationBarTitleDisplayMode(.inline)
+            .background(.clear)
         }
+        ignoresSafeArea()
     }
 }
 

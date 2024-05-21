@@ -8,13 +8,6 @@
 import Foundation
 
 // MARK: - HTTPEndPointsApp
-enum HTTPEndPoints {
-    case listPokemon(offset: Int, limit: Int)
-    
-    var endPointString: String {
-        switch self {
-        case .listPokemon(let offset, let limit):
-            return "pokemon?offset=\(offset)&limit=\(limit)"
-        }
-    }
+enum HTTPEndPoints: String {
+    case listPokemon = "pokemon"
 }

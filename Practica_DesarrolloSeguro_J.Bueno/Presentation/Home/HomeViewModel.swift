@@ -8,30 +8,33 @@
 import Foundation
 import Combine
 
+
 // MARK: - HomeViewModel
 final class HomeViewModel: ObservableObject {
     
     // MARK: Properties
     let repository: RepositoryNetworkPokemonProtocol
-    @Published var numberOfPokemons: Int = 0
     @Published var pokemons: [Pokemon] = []
+    @Published var status = Status.none
     
     // MARK: Init
     init(repository: RepositoryNetworkPokemonProtocol = RepositoryPokemon()) {
         self.repository = repository
-        getPokemons()
     }
     
     // MARK: Functions
     func getPokemons() {
+        self.status = .loading
+        
         DispatchQueue.main.async {
             Task {
                 do {
-                    let (numberOfPokemons, pokemonsData) = try await self.repository.getPokemon(offset: 0, limit: 20)
-                    self.numberOfPokemons = numberOfPokemons
+                    let pokemonsData = try await self.repository.getPokemon()
                     self.pokemons = pokemonsData
+                    self.status = .loaded
                 } catch {
                     let errorMessage = errorMessage(for: error)
+                    self.status = .error(error: errorMessage)
                     NSLog(errorMessage)
                 }
             }

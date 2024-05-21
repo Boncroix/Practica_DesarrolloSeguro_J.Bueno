@@ -11,7 +11,7 @@ import SwiftUI
 struct Practica_DesarrolloSeguro_J_BuenoApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            RootView(viewModel: HomeViewModel())
         }
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 protocol NetworkRequestProtocol {
     
     // MARK: Functions
-    func requestForListPokemon(offset: Int, limit: Int) async throws -> URLRequest
+    func requestForListPokemon() async throws -> URLRequest
     
     func requestForPokemon(url: String) async throws -> URLRequest
 }

@@ -11,5 +11,5 @@ import Foundation
 protocol NetworkPokemonProtocol {
     
     // MARK: Functions
-    func getPokemon(offset: Int, limit: Int) async throws -> (Int, [Pokemon])
+    func getPokemon() async throws -> [Pokemon]
 }
