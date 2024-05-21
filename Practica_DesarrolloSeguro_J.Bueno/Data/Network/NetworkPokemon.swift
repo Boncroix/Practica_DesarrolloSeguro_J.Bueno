@@ -11,11 +11,11 @@ import Foundation
 final class NetworkPokemon: NetworkPokemonProtocol {
 
     // MARK: GetPokemon
-    func getPokemon() async throws -> [Pokemon] {
+    func getPokemon(url: String? = nil) async throws -> (PokemonEntry, [Pokemon]) {
         
         var pokemons: [Pokemon] = []
         
-        let request = try await NetworkRequest().requestForListPokemon()
+        let request = try await NetworkRequest().requestForListPokemon(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -31,7 +31,7 @@ final class NetworkPokemon: NetworkPokemonProtocol {
             pokemons.append(try await getDetailPokemon(url: pokemon.url ?? ""))
         }
         
-        return pokemons
+        return (modelResponse, pokemons)
     }
 
     // MARK: GetDetailPokemon

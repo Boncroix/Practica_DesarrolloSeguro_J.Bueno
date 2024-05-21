@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Status {
-    case none, loading, loaded, error(error:String)
+    case home, nextPrev(url:String), loading, loaded, error(error:String)
 }
 
 struct RootView: View {
@@ -19,10 +19,15 @@ struct RootView: View {
     // MARK: View
     var body: some View {
         switch viewModel.status {
-        case .none:
+        case .home:
             Text("Status None")
                 .onAppear {
                     viewModel.getPokemons()
+                }
+        case .nextPrev(url: let urlString):
+            Text("Status Next Page")
+                .onAppear {
+                    viewModel.getPokemons(url: urlString)
                 }
         case .loading:
             LoadingView()
@@ -30,7 +35,7 @@ struct RootView: View {
             HomeView(homeViewModel: viewModel)
         case .error(error: let errorString):
             ErrorView(error: errorString) {
-                viewModel.status = .none
+                viewModel.status = .home
             }
             
         }

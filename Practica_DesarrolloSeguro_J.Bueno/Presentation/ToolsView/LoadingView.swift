@@ -15,7 +15,7 @@ struct LoadingView: View {
             Image("fondo1")
                 .resizable()
                 
-            Color.black.opacity(0.6)
+            Color.whiteBlack.opacity(0.6)
             
             VStack{
                 

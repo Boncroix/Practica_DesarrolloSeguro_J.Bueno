@@ -43,8 +43,9 @@ struct PokemonCellView: View {
             
             VStack (alignment: .leading, content: {
                 Text(pokemon.name ?? "Unknown")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 20))
+                    .textCase(.uppercase)
+                    .bold()
+                    .font(.system(size: 16))
                     .padding()
             })
         }

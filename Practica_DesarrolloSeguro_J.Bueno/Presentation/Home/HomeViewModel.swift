@@ -14,8 +14,9 @@ final class HomeViewModel: ObservableObject {
     
     // MARK: Properties
     let repository: RepositoryNetworkPokemonProtocol
+    @Published var pokemonsEntry: PokemonEntry = PokemonEntry(count: 1, next: "", previous: "", results: [])
     @Published var pokemons: [Pokemon] = []
-    @Published var status = Status.none
+    @Published var status = Status.home
     
     // MARK: Init
     init(repository: RepositoryNetworkPokemonProtocol = RepositoryPokemon()) {
@@ -23,13 +24,14 @@ final class HomeViewModel: ObservableObject {
     }
     
     // MARK: Functions
-    func getPokemons() {
+    func getPokemons(url: String? = nil) {
         self.status = .loading
         
         DispatchQueue.main.async {
             Task {
                 do {
-                    let pokemonsData = try await self.repository.getPokemon()
+                    let (pokemonsEntry, pokemonsData) = try await self.repository.getPokemon(url: url)
+                    self.pokemonsEntry = pokemonsEntry
                     self.pokemons = pokemonsData
                     self.status = .loaded
                 } catch {
