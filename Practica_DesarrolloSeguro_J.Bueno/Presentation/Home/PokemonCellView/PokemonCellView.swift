@@ -8,46 +8,55 @@
 import SwiftUI
 
 
+import SwiftUI
+
 // MARK: - PokemonCellView
 struct PokemonCellView: View {
     
     // MARK: Properties
     var pokemon: Pokemon
-
-    // MARK: Init
-    init(pokemon: Pokemon) {
-        self.pokemon = pokemon
-    }
     
     // MARK: View
     var body: some View {
         HStack {
+            pokemonImage
+            pokemonInfo
+        }
+    }
+    
+    // MARK: SubViews
+    private var pokemonImage: some View {
+        Group {
             if let urlString = pokemon.sprites?.other?.home.frontDefault, let url = URL(string: urlString) {
-                AsyncImage(url: url,
-                           content: { image in
-                               image.resizable()
-                                    .frame(width: 150, height: 100)
-                                    .aspectRatio(contentMode: .fill)
-                                    .clipped()
-                           },
-                           placeholder: {
-                               ProgressView()
-                           })
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                        .frame(width: 150, height: 150)
+                        .aspectRatio(contentMode: .fill)
+                        .clipped()
+                } placeholder: {
+                    placeholderImage
+                }
             } else {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 100)
-                    .foregroundColor(.gray)
+                placeholderImage
             }
-            
-            VStack (alignment: .leading, content: {
-                Text(pokemon.name ?? "Unknown")
-                    .textCase(.uppercase)
-                    .bold()
-                    .font(.system(size: 16))
-                    .padding()
-            })
+        }
+    }
+    
+    private var placeholderImage: some View {
+        Image(systemName: "photo")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 150, height: 150)
+            .foregroundColor(.gray)
+    }
+    
+    private var pokemonInfo: some View {
+        VStack(alignment: .leading) {
+            Text(pokemon.name ?? "Unknown")
+                .textCase(.uppercase)
+                .bold()
+                .font(.system(size: 16))
+                .padding()
         }
     }
 }
@@ -55,5 +64,6 @@ struct PokemonCellView: View {
 // MARK: - Preview
 #Preview {
     PokemonCellView(
-        pokemon: Pokemon(id: 25, name: "Pikachu", height: 4, weight: 60, sprites: Sprites(frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png", other: nil)))
+        pokemon: ConstApp.POKEMON_TEST
+    )
 }

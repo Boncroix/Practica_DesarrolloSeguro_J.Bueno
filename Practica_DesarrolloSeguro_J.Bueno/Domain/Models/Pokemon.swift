@@ -34,22 +34,7 @@ class Sprites: Codable {
 
 // MARK: - Other
 struct Other: Codable {
-    let dreamWorld: DreamWorld
     let home: Home
-    
-    enum CodingKeys: String, CodingKey {
-        case dreamWorld = "dream_world"
-        case home
-    }
-}
-
-// MARK: - DreamWorld
-struct DreamWorld: Codable {
-    let frontDefault: String
-    
-    enum CodingKeys: String, CodingKey {
-        case frontDefault = "front_default"
-    }
 }
 
 // MARK: - Home

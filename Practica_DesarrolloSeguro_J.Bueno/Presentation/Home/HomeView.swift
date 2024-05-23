@@ -9,29 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     
-    // MARK: - Properties
+    // MARK:  Properties
     @ObservedObject var homeViewModel: HomeViewModel
+    private var nextPage: String? { homeViewModel.pokemonsEntry.next
+    }
+    private var prevPage: String? { homeViewModel.pokemonsEntry.previous
+    }
     
-    
-    // MARK: - Init
+    // MARK:  Init
     init(homeViewModel: HomeViewModel = HomeViewModel()) {
         self.homeViewModel = homeViewModel
     }
+
     
     // MARK: - View
     var body: some View {
-        
-        let nextPage = homeViewModel.pokemonsEntry.next
-        let prevPage = homeViewModel.pokemonsEntry.previous
-        
-        NavigationView {
+        NavigationStack {
             ZStack {
-                Image("fondo1")
-                    .resizable()
-                    .ignoresSafeArea()
-                
-                Color.whiteBlack.opacity(0.9)
-                    .ignoresSafeArea()
+                BackgroundView()
                 
                 List(homeViewModel.pokemons) { pokemon in
                     PokemonCellView(pokemon: pokemon)
@@ -42,22 +37,14 @@ struct HomeView: View {
                 .scrollContentBackground(.hidden)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        if let previousURL = homeViewModel.pokemonsEntry.previous {
-                            Button(action: {
-                                homeViewModel.status = .nextPrev(url: previousURL)
-                            }) {
-                                Text("Prev")
-                            }
+                        NavigationButton(title: "Prev", url: prevPage) { url in
+                            homeViewModel.status = .nextPrev(url: url)
                         }
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if let nextURL = homeViewModel.pokemonsEntry.next {
-                            Button(action: {
-                                homeViewModel.status = .nextPrev(url: nextURL)
-                            }) {
-                                Text("Next")
-                            }
+                        NavigationButton(title: "Next", url: nextPage) { url in
+                            homeViewModel.status = .nextPrev(url: url)
                         }
                     }
                 }
@@ -66,6 +53,37 @@ struct HomeView: View {
     }
 }
 
+// MARK: - Subviews
+struct BackgroundView: View {
+    var body: some View {
+        ZStack {
+            Image("fondo1")
+                .resizable()
+                .ignoresSafeArea()
+            
+            Color.whiteBlack.opacity(0.9)
+                .ignoresSafeArea()
+        }
+    }
+}
+
+struct NavigationButton: View {
+    let title: String
+    let url: String?
+    let action: (String) -> Void
+    
+    var body: some View {
+        if let url = url {
+            Button(action: {
+                action(url)
+            }) {
+                Text(title)
+            }
+        }
+    }
+}
+
+// MARK: - Preview
 #Preview {
     HomeView(homeViewModel: HomeViewModel())
 }
