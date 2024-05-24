@@ -32,6 +32,8 @@
 		429845EF2BF548E000BF95DB /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845EE2BF548E000BF95DB /* NetworkRequest.swift */; };
 		429845F12BF54D5F00BF95DB /* NetworkPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */; };
 		429845F42BF5CDBE00BF95DB /* URLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */; };
+		42B1A8062BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */; };
+		42B1A8082BFFCB0500F47C1D /* SSLPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		429845EE2BF548E000BF95DB /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPokemon.swift; sourceTree = "<group>"; };
 		429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extension.swift"; sourceTree = "<group>"; };
+		42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningSecureURLSession.swift; sourceTree = "<group>"; };
+		42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +140,6 @@
 		429845BE2BF5293100BF95DB /* Practica_DesarrolloSeguro_J.Bueno */ = {
 			isa = PBXGroup;
 			children = (
-				429845BF2BF5293100BF95DB /* Practica_DesarrolloSeguro_J_BuenoApp.swift */,
 				429845D02BF52A0700BF95DB /* Presentation */,
 				429845CE2BF529F700BF95DB /* Domain */,
 				429845CF2BF529FD00BF95DB /* Data */,
@@ -156,6 +159,7 @@
 		429845CD2BF529EB00BF95DB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				429845BF2BF5293100BF95DB /* Practica_DesarrolloSeguro_J_BuenoApp.swift */,
 				429845C32BF5293400BF95DB /* Assets.xcassets */,
 				4226163A2BFBD90E004A5537 /* Launch Screen.storyboard */,
 			);
@@ -215,6 +219,7 @@
 		429845DB2BF5463700BF95DB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				42B1A8042BFFCA5A00F47C1D /* SSLPinning */,
 				429845DC2BF5468E00BF95DB /* BaseNetwork */,
 				429845EE2BF548E000BF95DB /* NetworkRequest.swift */,
 				429845F02BF54D5F00BF95DB /* NetworkPokemon.swift */,
@@ -248,6 +253,15 @@
 				429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		42B1A8042BFFCA5A00F47C1D /* SSLPinning */ = {
+			isa = PBXGroup;
+			children = (
+				42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */,
+				42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */,
+			);
+			path = SSLPinning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,12 +343,14 @@
 				429845E92BF5488800BF95DB /* HTTPHeader.swift in Sources */,
 				429845E72BF5486B00BF95DB /* HTTPMethods.swift in Sources */,
 				422616102BF91C77004A5537 /* NetworkPokemonProtocol.swift in Sources */,
+				42B1A8062BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift in Sources */,
 				429845E52BF5484D00BF95DB /* HTTPResponseCodes.swift in Sources */,
 				429845DF2BF5472800BF95DB /* ConstApp.swift in Sources */,
 				4226160B2BF88849004A5537 /* NetworkRequestProtocol.swift in Sources */,
 				422616142BF91E1F004A5537 /* RepositoryNetworkPokemonProtocol.swift in Sources */,
 				422616392BFBC615004A5537 /* ErrorView.swift in Sources */,
 				429845D72BF5401600BF95DB /* PokemonList.swift in Sources */,
+				42B1A8082BFFCB0500F47C1D /* SSLPinningDelegate.swift in Sources */,
 				422616322BFBB823004A5537 /* RootView.swift in Sources */,
 				422616172BF923FB004A5537 /* HomeView.swift in Sources */,
 				429845F12BF54D5F00BF95DB /* NetworkPokemon.swift in Sources */,
