@@ -34,6 +34,7 @@
 		429845F42BF5CDBE00BF95DB /* URLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */; };
 		42B1A8062BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */; };
 		42B1A8082BFFCB0500F47C1D /* SSLPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */; };
+		42B1A80A2C01AFA400F47C1D /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1A8092C01AFA400F47C1D /* Crypto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		429845F32BF5CDBE00BF95DB /* URLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extension.swift"; sourceTree = "<group>"; };
 		42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningSecureURLSession.swift; sourceTree = "<group>"; };
 		42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningDelegate.swift; sourceTree = "<group>"; };
+		42B1A8092C01AFA400F47C1D /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			children = (
 				42B1A8052BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift */,
 				42B1A8072BFFCB0500F47C1D /* SSLPinningDelegate.swift */,
+				42B1A8092C01AFA400F47C1D /* Crypto.swift */,
 			);
 			path = SSLPinning;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				42B1A8062BFFCA7B00F47C1D /* SSLPinningSecureURLSession.swift in Sources */,
 				429845E52BF5484D00BF95DB /* HTTPResponseCodes.swift in Sources */,
 				429845DF2BF5472800BF95DB /* ConstApp.swift in Sources */,
+				42B1A80A2C01AFA400F47C1D /* Crypto.swift in Sources */,
 				4226160B2BF88849004A5537 /* NetworkRequestProtocol.swift in Sources */,
 				422616142BF91E1F004A5537 /* RepositoryNetworkPokemonProtocol.swift in Sources */,
 				422616392BFBC615004A5537 /* ErrorView.swift in Sources */,

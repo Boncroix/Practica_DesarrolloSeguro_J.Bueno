@@ -13,7 +13,9 @@ struct NetworkRequest: NetworkRequestProtocol {
     // MARK: RequestForLIstPokemon
     func requestForListPokemon(url: String? = nil) async throws -> URLRequest {
         
-        let urlString = url ?? "\(ConstApp.CONST_API_URL)\(HTTPEndPoints.listPokemon.rawValue)"
+        let  crypto = Crypto(selaledDataBox: ConstApp.CONST_API_URL)
+        
+        let urlString = url ?? "\(crypto.getDecrypted() ?? "")\(HTTPEndPoints.listPokemon.rawValue)"
         
 
         guard let url = URL(string: urlString) else {

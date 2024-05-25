@@ -16,6 +16,7 @@ final class NetworkPokemon: NetworkPokemonProtocol {
         var pokemons: [Pokemon] = []
         
         let request = try await NetworkRequest().requestForListPokemon(url: url)
+        
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse,
