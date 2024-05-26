@@ -52,7 +52,7 @@
 		422616382BFBC615004A5537 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4226163A2BFBD90E004A5537 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		427B3E1B2C0309A000935016 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		427B3E1D2C030F4A00935016 /* Practica-DesarrolloSeguro-J-Bueno-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Practica-DesarrolloSeguro-J-Bueno-Info.plist"; path = "Practica_DesarrolloSeguro_J.Bueno/Practica-DesarrolloSeguro-J-Bueno-Info.plist"; sourceTree = SOURCE_ROOT; };
+		427B3E1D2C030F4A00935016 /* Practica-DesarrolloSeguro-J-Bueno-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Practica-DesarrolloSeguro-J-Bueno-Info.plist"; path = "Practica_DesarrolloSeguro_J.Bueno/App/Practica-DesarrolloSeguro-J-Bueno-Info.plist"; sourceTree = SOURCE_ROOT; };
 		427B3E1E2C03496700935016 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		429845BC2BF5293100BF95DB /* Practica_DesarrolloSeguro_J.Bueno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practica_DesarrolloSeguro_J.Bueno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429845BF2BF5293100BF95DB /* Practica_DesarrolloSeguro_J_BuenoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practica_DesarrolloSeguro_J_BuenoApp.swift; sourceTree = "<group>"; };
@@ -157,7 +157,6 @@
 		429845BE2BF5293100BF95DB /* Practica_DesarrolloSeguro_J.Bueno */ = {
 			isa = PBXGroup;
 			children = (
-				427B3E1D2C030F4A00935016 /* Practica-DesarrolloSeguro-J-Bueno-Info.plist */,
 				429845D02BF52A0700BF95DB /* Presentation */,
 				429845CE2BF529F700BF95DB /* Domain */,
 				429845CF2BF529FD00BF95DB /* Data */,
@@ -169,6 +168,7 @@
 		429845CD2BF529EB00BF95DB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				427B3E1D2C030F4A00935016 /* Practica-DesarrolloSeguro-J-Bueno-Info.plist */,
 				429845BF2BF5293100BF95DB /* Practica_DesarrolloSeguro_J_BuenoApp.swift */,
 				429845C32BF5293400BF95DB /* Assets.xcassets */,
 				4226163A2BFBD90E004A5537 /* Launch Screen.storyboard */,
