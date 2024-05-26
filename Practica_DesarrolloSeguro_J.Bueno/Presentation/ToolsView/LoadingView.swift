@@ -15,13 +15,13 @@ struct LoadingView: View {
             Image("fondo1")
                 .resizable()
                 
-            Color.whiteBlack.opacity(0.6)
+            Color.whiteBlack.opacity(0.4)
             
             VStack{
                 
                 ProgressView(value: isLoading ? 1.0 : nil) {
                     
-                    Text("Loading...")
+                    Text(NSLocalizedString("Loading", comment: ""))
                         .foregroundColor(.blue)
                 }
                     .progressViewStyle(CircularProgressViewStyle())

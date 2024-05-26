@@ -32,18 +32,18 @@ struct HomeView: View {
                     PokemonCellView(pokemon: pokemon)
                         .listRowBackground(Color.clear)
                 }
-                .navigationTitle("Pokemons")
+                .navigationTitle(NSLocalizedString("Pokemon", comment: ""))
                 .navigationBarTitleDisplayMode(.inline)
                 .scrollContentBackground(.hidden)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationButton(title: "Prev", url: prevPage) { url in
+                        NavigationButton(title: NSLocalizedString("Prev", comment: ""), url: prevPage) { url in
                             homeViewModel.status = .nextPrev(url: url)
                         }
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationButton(title: "Next", url: nextPage) { url in
+                        NavigationButton(title: NSLocalizedString("Next", comment: ""), url: nextPage) { url in
                             homeViewModel.status = .nextPrev(url: url)
                         }
                     }
@@ -61,7 +61,7 @@ struct BackgroundView: View {
                 .resizable()
                 .ignoresSafeArea()
             
-            Color.whiteBlack.opacity(0.9)
+            Color.whiteBlack.opacity(0.7)
                 .ignoresSafeArea()
         }
     }
