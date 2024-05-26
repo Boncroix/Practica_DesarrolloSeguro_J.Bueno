@@ -11,7 +11,6 @@ import Foundation
 enum NetworkError: Error {
     case malformedURL
     case dataEncodingFailed
-    case tokenFormatError
     case statusCodeError(Int)
     case noData
     case dataDecodingFailed
@@ -20,21 +19,19 @@ enum NetworkError: Error {
 // Return String NetworkError
 func errorMessage(for error: Error) -> String {
     guard let networkError = error as? NetworkError else {
-        return "UNKNOWN ERROR"
+        return NSLocalizedString("UNKNOWN ERROR", comment: "")
     }
     
     switch networkError {
     case .malformedURL:
-        return "MALFORMED URL"
+        return NSLocalizedString("MALFORMED URL", comment: "")
     case .dataEncodingFailed:
-        return "DATA ENCODING FAILED"
-    case .tokenFormatError:
-        return "TOKEN FORMAT ERROR"
+        return NSLocalizedString("DATA ENCODING FAILED", comment: "")
     case .statusCodeError(let errorCode):
-        return "ERROR CODE \(errorCode)"
+        return "\(NSLocalizedString("ERROR CODE", comment: ""))\(errorCode)"
     case .noData:
-        return "NO DATA"
+        return NSLocalizedString("NO DATA", comment: "")
     case .dataDecodingFailed:
-        return "DATA DECODING FAILED"
+        return NSLocalizedString("DATA DECODING FAILED", comment: "")
     }
 }

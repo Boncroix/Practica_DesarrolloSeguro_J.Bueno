@@ -22,6 +22,11 @@ struct PokemonCellView: View {
             pokemonImage
             pokemonInfo
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 18)
+                .fill(Color.gray.opacity(0.4))
+        )
     }
     
     // MARK: SubViews

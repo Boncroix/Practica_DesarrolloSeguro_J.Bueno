@@ -16,6 +16,18 @@ struct ErrorView: View {
     // MARK: View
     var body: some View {
         ZStack {
+            Image("fondo1")
+                .resizable()
+            
+            Color.whiteBlack.opacity(0.4)
+            
+            errorContent
+        }
+        .ignoresSafeArea()
+    }
+    
+    private var errorContent: some View {
+        ZStack {
             Image("pokemoncrying")
                 .resizable()
                 .opacity(0.2)

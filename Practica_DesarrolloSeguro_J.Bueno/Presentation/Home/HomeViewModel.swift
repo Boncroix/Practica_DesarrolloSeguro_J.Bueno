@@ -7,20 +7,23 @@
 
 import Foundation
 import Combine
+import LocalAuthentication
 
 
 // MARK: - HomeViewModel
 final class HomeViewModel: ObservableObject {
     
     // MARK: Properties
-    let repository: RepositoryNetworkPokemonProtocol
+    let authentication: Authentication
+    private let repository: RepositoryNetworkPokemonProtocol
     @Published var pokemonsEntry: PokemonEntry = PokemonEntry(count: 1, next: "", previous: "", results: [])
     @Published var pokemons: [Pokemon] = []
-    @Published var status = Status.home
+    @Published var status = Status.none
     
     // MARK: Init
-    init(repository: RepositoryNetworkPokemonProtocol = RepositoryPokemon()) {
+    init(repository: RepositoryNetworkPokemonProtocol = RepositoryPokemon(), authentication: Authentication = Authentication.shared) {
         self.repository = repository
+        self.authentication = authentication
     }
     
     // MARK: Functions

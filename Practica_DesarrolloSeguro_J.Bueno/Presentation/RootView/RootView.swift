@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Status {
-    case home, nextPrev(url:String), loading, loaded, error(error:String)
+    case none, home, nextPrev(url:String), loading, loaded, error(error:String)
 }
 
 struct RootView: View {
@@ -19,8 +19,19 @@ struct RootView: View {
     // MARK: View
     var body: some View {
         switch viewModel.status {
+        case .none:
+            AuthenticationView()
+                .onAppear {
+                    viewModel.authentication.authenticateUser { succes in
+                        if succes {
+                            viewModel.status = .home
+                        } else {
+                            viewModel.status = .error(error: NSLocalizedString("AUTHENTICATION ERROR", comment: ""))
+                        }
+                    }
+                }
         case .home:
-            Text("Status None")
+            Text("Status Home")
                 .onAppear {
                     viewModel.getPokemons()
                 }
@@ -35,11 +46,9 @@ struct RootView: View {
             HomeView(homeViewModel: viewModel)
         case .error(error: let errorString):
             ErrorView(error: errorString) {
-                viewModel.status = .home
+                viewModel.status = .none
             }
-            
         }
-
     }
 }
 
