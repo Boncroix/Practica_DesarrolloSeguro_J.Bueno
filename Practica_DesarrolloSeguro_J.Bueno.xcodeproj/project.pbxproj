@@ -138,13 +138,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		427B3E202C034ABC00935016 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		429845B32BF5293100BF95DB = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +204,6 @@
 				422616152BF923EA004A5537 /* Home */,
 				422616302BFBB7AD004A5537 /* RootView */,
 				422616352BFBC212004A5537 /* ToolsView */,
-				427B3E202C034ABC00935016 /* Preview Content */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
